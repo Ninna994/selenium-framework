@@ -1,0 +1,7 @@
+.idea/
+
+# Maven stuff
+target/
+
+### Java template
+*.class
