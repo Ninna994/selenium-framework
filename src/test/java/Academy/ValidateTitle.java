@@ -32,7 +32,7 @@ public class ValidateTitle extends base {
     public void basePageNavigation() throws IOException {
         LandingPage landing = new LandingPage(driver);
         landing.getModalCloseButton().click();
-        Assert.assertEquals(landing.getFeaturedCoursesText().getText(), "FEATURED COURSES123");
+        Assert.assertEquals(landing.getFeaturedCoursesText().getText(), "FEATURED COURSES");
         log.info("Successfully validated Featured Courses");
     }
 
