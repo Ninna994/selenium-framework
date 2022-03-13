@@ -12,10 +12,11 @@ public class LandingPage {
     }
 
     //    objects
-    By login = By.cssSelector("a[href*='sign_in']");
-    By modalCloseButton = By.className("sumome-react-wysiwyg-close-button");
-    By featuredCoursesText = By.cssSelector(".text-center>h2");
-    By navbar = By.className("navbar-nav");
+   private By login = By.cssSelector("a[href*='sign_in']");
+   private By modalCloseButton = By.className("sumome-react-wysiwyg-close-button");
+   private By featuredCoursesText = By.cssSelector(".text-center>h2");
+   private By navbar = By.className("navbar-nav");
+   private By title = By.cssSelector(".video-banner h3");
 
 
     //    methods
@@ -35,5 +36,8 @@ public class LandingPage {
 
     public WebElement getNavbar() {
         return driver.findElement(navbar);
+    }
+    public WebElement getTitle() {
+        return driver.findElement(title);
     }
 }

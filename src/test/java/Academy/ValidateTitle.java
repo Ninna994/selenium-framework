@@ -19,7 +19,7 @@ public class ValidateTitle extends base {
     // for parallel execution
     public WebDriver driver;
     public static Logger log = LogManager.getLogger(base.class.getName());
-
+    LandingPage landing;
     @BeforeTest
     public void initialize() throws IOException {
         driver = initializeDriver();
@@ -30,10 +30,15 @@ public class ValidateTitle extends base {
 
     @Test
     public void basePageNavigation() throws IOException {
-        LandingPage landing = new LandingPage(driver);
+        landing = new LandingPage(driver);
         landing.getModalCloseButton().click();
         Assert.assertEquals(landing.getFeaturedCoursesText().getText(), "FEATURED COURSES");
         log.info("Successfully validated Featured Courses");
+    }
+
+    @Test
+    public void validatePageH1(){
+   Assert.assertEquals(landing.getTitle().getText(), "AN ACADEMY TO LEARN EVERYTHING ABOUT TESTING");
     }
 
     @AfterTest
