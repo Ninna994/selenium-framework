@@ -3,6 +3,7 @@ package Academy;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -15,6 +16,8 @@ import resources.base;
 import java.io.IOException;
 
 public class ValidateTitle extends base {
+    // for parallel execution
+    public WebDriver driver;
     public static Logger log = LogManager.getLogger(base.class.getName());
 
     @BeforeTest
@@ -29,9 +32,8 @@ public class ValidateTitle extends base {
     public void basePageNavigation() throws IOException {
         LandingPage landing = new LandingPage(driver);
         landing.getModalCloseButton().click();
-        Assert.assertEquals(landing.getFeaturedCoursesText().getText(), "FEATURED COURSES");
+        Assert.assertEquals(landing.getFeaturedCoursesText().getText(), "FEATURED COURSES123");
         log.info("Successfully validated Featured Courses");
-
     }
 
     @AfterTest

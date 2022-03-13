@@ -1,5 +1,6 @@
 package Academy;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -10,6 +11,8 @@ import resources.base;
 import java.io.IOException;
 
 public class ValidateNavigation extends base {
+    // for parallel execution
+    public WebDriver driver;
     @BeforeTest
     public void initialize() throws IOException {
         driver = initializeDriver();

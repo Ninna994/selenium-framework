@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/Ina/Desktop/E2EProject">
+<suite name="All Test Suite" parallel="tests">
+<!--     Add listeners-->
+    <listeners>
+        <listener class-name="Academy.Listeners"/>
+    </listeners>
+<!--    Wrap all classes individually into test tags so that all windows opened close after each test-->
+
+    <test verbose="2" preserve-order="true" name="Validate login">
         <classes>
-<!--            <class name="Academy.HomePage">-->
-<!--               <methods>-->
-<!--                <include name="basePageNavigation"/>-->
-<!--              </methods>-->
-<!--             </class>-->
-            <class name="Academy.ValidateNavigation">
-<!--                <methods>-->
-<!--                    <include name="basePageNavigation"/>-->
-<!--                </methods>-->
-            </class>
-            <class name="Academy.ValidateTitle">
-<!--                <methods>-->
-<!--                    <include name="basePageNavigation"/>-->
-<!--                </methods>-->
-            </class>
+            <class name="Academy.HomePage"/>
         </classes>
     </test>
+    <test name="Validate navigation">
+        <classes>
+            <class name="Academy.ValidateNavigation"/>
+        </classes>
+    </test>
+    <test name="Validate title">
+        <classes>
+            <class name="Academy.ValidateTitle"/>
+        </classes>
+    </test>
+
+
 </suite>
